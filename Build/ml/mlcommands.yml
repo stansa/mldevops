@@ -1,0 +1,37 @@
+﻿#See https://github.com/hning86/azuremlps for Azure ML Powershell commands
+#Most Yaml section below map to one of those Powershell commands
+
+'AML_Studio_Credentials':
+   ML_AuthorizationToken: 'PYvVL8Bx44My65/h7kJD8ikrfG01Q5NbB77kcDrlKBsd8A0dz0k7oTnesudf0tGdsyPdx0iBfB80DlJJPnaZig=='
+   ML_WorkspaceId: '210d5e45708a4896ba83c9e4c7ce604d' 
+   ML_Location: 'South Central US' 
+
+'Default':
+
+
+'CreateOrUpdateWS':
+   webservice_type: CreditRisk
+
+
+'UpdateWSILearner':
+  new_ilearner_file_name: Credit_risk.ilearner
+  webservice_type: CreditRisk
+
+
+'DeleteWS':
+   webservice_type: CreditRisk
+
+
+'ExportTrainedModel':
+   experiment_name: Credit Risk PL PoC
+   trained_model_comment: Train Model 1
+   trained_model_output_port: Trained model
+   ilearner_file_name: Credit_risk.ilearner
+
+
+'ExportWSDef':
+  websvc_name: CreditRiskPLPoCNew  
+  webservice_definition_file_name: CreditRisk.json
+
+
+

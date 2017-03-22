@@ -46,16 +46,20 @@
     <None Include="..\build.ps1">
       <Link>build.ps1</Link>
     </None>
-    <None Include=".config_user.ps1" />
-    <None Include="config_dev.ps1" />
-    <None Include="config_common.ps1" />
-    <None Include="init.ps1" />
+    <None Include="apitypes\apitypes.yml" />
+    <None Include="config\.serviceprincipal.json" />
+    <None Include="config\config_common.yml" />
+    <None Include="config\config_dev.yml" />
+    <None Include="config\config_prod.yml" />
+    <None Include="config\config_common.ps1" />
+    <None Include="config\config_stage.yml" />
+    <None Include="ml\mlcommands.yml" />
     <None Include="psake.ps1" />
-    <None Include=".serviceprincipal.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="AzureMLPS.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

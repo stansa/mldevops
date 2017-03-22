@@ -1,0 +1,536 @@
+{
+  "properties": {
+    "packageType": "Graph",
+    "package": {
+      "nodes": {
+        "node1": {
+          "assetId": "asset1",
+          "parameters": {
+            "Append score columns to output": "True"
+          }
+        },
+        "node2": {
+          "assetId": "asset3",
+          "parameters": {
+            "R Script": "# Map 1-based optional input ports to variables\ndataset <- maml.mapInputPort(1) \n\ndata.set <- dataset[dataset[,21]==1,]\npos <- dataset[dataset[,21]==2,]\nfor (i in 1:5) data.set <- rbind(data.set,pos)\nrow.names(data.set) <- NULL\nmaml.mapOutputPort(\"data.set\")",
+            "Random Seed": "42",
+            "R Version": "CRAN R 3.1.0"
+          }
+        },
+        "node3": {
+          "assetId": "asset4",
+          "parameters": {
+            "Column": "%7B%22isFilter%22%3Atrue%2C%22rules%22%3A%5B%7B%22ruleType%22%3A%22ColumnIndexes%22%2C%22columns%22%3A%5B%221-21%22%5D%2C%22exclude%22%3Afalse%7D%5D%7D",
+            "Data Type": "Unchanged",
+            "Categorical": "Unchanged",
+            "Fields": "Unchanged",
+            "New Column Name": "Status of checking account,Duration in months,Credit history,Purpose,Credit amount,Savings account/bond,Present employment since,Installment rate in percentage of disposable income,Personal status and sex,Other debtors/guarantors,Present residence since,Property,Age in years,Other installment plans,Housing,Number of existing credits at this bank,Job,Number of people being liable to provide maintenance for,Telephone,Foreign worker,Credit risk"
+          }
+        },
+        "node4": {
+          "assetId": "asset5",
+          "parameters": {}
+        },
+        "node5": {
+          "assetId": "asset2"
+        },
+        "node6": {
+          "assetId": "asset6"
+        },
+        "node7": {
+          "inputId": "input1"
+        },
+        "node8": {
+          "outputId": "output1"
+        }
+      },
+      "edges": [
+        {
+          "sourceNodeId": "node2",
+          "sourcePortId": "Result Dataset",
+          "targetNodeId": "node4",
+          "targetPortId": "Dataset"
+        },
+        {
+          "sourceNodeId": "node3",
+          "sourcePortId": "Results dataset",
+          "targetNodeId": "node2",
+          "targetPortId": "Dataset1"
+        },
+        {
+          "sourceNodeId": "node4",
+          "sourcePortId": "Transformed dataset",
+          "targetNodeId": "node1",
+          "targetPortId": "Dataset"
+        },
+        {
+          "sourceNodeId": "node5",
+          "sourcePortId": "Results dataset",
+          "targetNodeId": "node1",
+          "targetPortId": "Trained model"
+        },
+        {
+          "sourceNodeId": "node6",
+          "sourcePortId": "Results dataset",
+          "targetNodeId": "node4",
+          "targetPortId": "Transformation"
+        },
+        {
+          "sourceNodeId": "node7",
+          "targetNodeId": "node3",
+          "targetPortId": "Dataset"
+        },
+        {
+          "sourceNodeId": "node1",
+          "sourcePortId": "Scored dataset",
+          "targetNodeId": "node8"
+        }
+      ],
+      "graphParameters": {}
+    },
+    "title": "Credit Risk PL PoC [Predictive Exp.]",
+    "description": "This sample demonstrates how to perform cost-sensitive binary classification in Azure ML Studio to predict credit risk based on information given on a credit application. ",
+    "readOnly": false,
+    "exposeSampleData": false,
+    "realtimeConfiguration": {
+      "maxConcurrentCalls": 20
+    },
+    "diagnostics": {
+      "level": "None"
+    },
+    "storageAccount": {
+      "name": "plmlpoc1storage"
+    },
+    "input": {
+      "title": "",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "input1": {
+          "title": "",
+          "description": "",
+          "type": "object",
+          "properties": {
+            "Column 0": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 1": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 2": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 3": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 4": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 5": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 6": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 7": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 8": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 9": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 10": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 11": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 12": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 13": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 14": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 15": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 16": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 17": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 18": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 19": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Column 20": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            }
+          }
+        }
+      }
+    },
+    "output": {
+      "title": "",
+      "description": "",
+      "type": "object",
+      "properties": {
+        "output1": {
+          "title": "",
+          "description": "",
+          "type": "object",
+          "properties": {
+            "Status of checking account": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Duration in months": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Credit history": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Purpose": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Credit amount": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Savings account/bond": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Present employment since": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Installment rate in percentage of disposable income": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Personal status and sex": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Other debtors/guarantors": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Present residence since": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Property": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Age in years": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Other installment plans": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Housing": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Number of existing credits at this bank": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Job": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Number of people being liable to provide maintenance for": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Telephone": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Foreign worker": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Credit risk": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Scored Labels": {
+              "type": "String",
+              "format": "",
+              "x-ms-isnullable": false
+            },
+            "Scored Probabilities": {
+              "type": "Number",
+              "format": "Double",
+              "x-ms-isnullable": false
+            }
+          }
+        }
+      }
+    },
+    "exampleRequest": {
+      "inputs": {
+        "input1": [
+          [
+            "A11",
+            "6",
+            "A34",
+            "A43",
+            "1169",
+            "A65",
+            "A75",
+            "4",
+            "A93",
+            "A101",
+            "4",
+            "A121",
+            "67",
+            "A143",
+            "A152",
+            "2",
+            "A173",
+            "1",
+            "A192",
+            "A201",
+            "1"
+          ],
+          [
+            "A11",
+            "24",
+            "A32",
+            "A43",
+            "1938",
+            "A61",
+            "A72",
+            "4",
+            "A91",
+            "A101",
+            "3",
+            "A122",
+            "32",
+            "A143",
+            "A152",
+            "1",
+            "A173",
+            "1",
+            "A191",
+            "A201",
+            "2"
+          ],
+          [
+            "A14",
+            "15",
+            "A32",
+            "A46",
+            "4623",
+            "A62",
+            "A73",
+            "3",
+            "A93",
+            "A101",
+            "2",
+            "A122",
+            "40",
+            "A143",
+            "A152",
+            "1",
+            "A174",
+            "1",
+            "A192",
+            "A201",
+            "2"
+          ],
+          [
+            "A14",
+            "24",
+            "A32",
+            "A43",
+            "2397",
+            "A63",
+            "A75",
+            "3",
+            "A93",
+            "A101",
+            "2",
+            "A123",
+            "35",
+            "A141",
+            "A152",
+            "2",
+            "A173",
+            "1",
+            "A192",
+            "A201",
+            "2"
+          ],
+          [
+            "A12",
+            "48",
+            "A32",
+            "A43",
+            "5951",
+            "A61",
+            "A73",
+            "2",
+            "A92",
+            "A101",
+            "2",
+            "A121",
+            "22",
+            "A143",
+            "A152",
+            "1",
+            "A173",
+            "1",
+            "A191",
+            "A201",
+            "2"
+          ]
+        ]
+      }
+    },
+    "assets": {
+      "asset1": {
+        "name": "Score Model",
+        "type": "Module",
+        "locationInfo": {
+          "uri": "aml://module/506153734175476c4f62416c57734963.401b4f92e7244d5abe81d5b0ff9bdb33.v1-default-1730",
+          "credentials": ""
+        }
+      },
+      "asset3": {
+        "name": "Execute R Script",
+        "type": "Module",
+        "locationInfo": {
+          "uri": "aml://module/506153734175476c4f62416c57734963.30806023392b42e094d66b775a6e0fd5.v1-default-1735",
+          "credentials": ""
+        }
+      },
+      "asset4": {
+        "name": "Edit Metadata",
+        "type": "Module",
+        "locationInfo": {
+          "uri": "aml://module/506153734175476c4f62416c57734963.370b6676c11c486fbf7335349f842a66.v1-default-1742",
+          "credentials": ""
+        }
+      },
+      "asset5": {
+        "name": "Apply Transformation",
+        "type": "Module",
+        "locationInfo": {
+          "uri": "aml://module/506153734175476c4f62416c57734963.805e592d0f1f48eb97c9688ed0c1dc70.v1-default-1742",
+          "credentials": ""
+        }
+      },
+      "asset2": {
+        "name": "Credit Risk PL PoC [trained model]",
+        "type": "Resource",
+        "locationInfo": {
+          "uri": "https://plmlpoc1storage.blob.core.windows.net/azuremlassetscontainer/ee3b5aebecfb42d3a6b058e0d68f20cd.ilearner"
+        },
+        "outputPorts": {
+          "Results dataset": {
+            "type": "Dataset"
+          }
+        }
+      },
+      "asset6": {
+        "name": "Credit Risk PL PoC [Normalize Data] 1",
+        "type": "Resource",
+        "locationInfo": {
+          "uri": "https://plmlpoc1storage.blob.core.windows.net/azuremlassetscontainer/47773e7f98f14cd397303ffadcd35f89.itransform"
+        },
+        "outputPorts": {
+          "Results dataset": {
+            "type": "Dataset"
+          }
+        }
+      }
+    },
+    "parameters": {}
+  },
+  "name": "CreditRiskPLPoCNew",
+  "location": "South Central US",
+  "tags": {}
+}

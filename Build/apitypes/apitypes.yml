@@ -1,0 +1,4 @@
+﻿CreditRisk:
+  websvc_definition_file_name:   CreditRisk.json
+  websvc_name: CreditRiskPrediction
+  websvc_title: "Predict Credit Risk based on credit application"
