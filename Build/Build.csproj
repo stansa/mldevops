@@ -47,12 +47,7 @@
       <Link>build.ps1</Link>
     </None>
     <None Include="apitypes\apitypes.yml" />
-    <None Include="config\.serviceprincipal.json" />
     <None Include="config\config_common.yml" />
-    <None Include="config\config_dev.yml" />
-    <None Include="config\config_prod.yml" />
-    <None Include="config\config_common.ps1" />
-    <None Include="config\config_stage.yml" />
     <None Include="ml\mlcommands.yml" />
     <None Include="psake.ps1" />
   </ItemGroup>

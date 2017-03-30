@@ -43,9 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="PredictiveExperiments\" />
     <Folder Include="TrainedModels\" />
-    <Folder Include="TrainingExperiments\" />
     <Folder Include="WebServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

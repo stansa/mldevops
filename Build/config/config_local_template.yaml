@@ -1,13 +1,23 @@
 ﻿'local':
   #Azure Subscription Name for ML Web Services 
   ML_SubscriptionName: mysubscription
+
   #Azure Resource Group Name for ML Web Services 
   ML_ResourceGroupName: myresourcegroup
+
   #Azure Storage Account for ML Web Services, stores iLearner files and other artifacts
   ML_WSDeploy_Storage_Acct: azuremlstorageaccount
+
   #Azure Storage Account Container for ML Web Services, stores iLearner files and other artifacts
   ML_Storage_Acct_Assets_Container: azuremlassetscontainer
+
   #Azure Storage Account Key to access Storage account above
   ML_WSDeploy_Storage_Acct_Key: NR2mxwRdZfVOMRRwsVFXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXw==
+
   #Azure ML Web Services commitment plan id
   ML_WSDeploy_Commit_Plan_ID: /subscriptions/96ef3807-XXXXXXXXXXXXXXX/resourceGroups/XXXXXXXXXXX/providers/Microsoft.MachineLearning/commitmentPlans/XXXXXXXXXXXXXXXXXXX
+
+  #Azure ML Workpace Credentials and Details
+  ML_AuthorizationToken: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXPdx0iBfB80DlJJPnaZig=='
+  ML_WorkspaceId: '210d5XXXXXXXXXXXXXXXXXXXXX' 
+  ML_Location: 'South Central US' 

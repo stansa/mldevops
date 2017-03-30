@@ -1,6 +1,6 @@
 ﻿param (
    
-	[ValidateSet( "Default","ExportTrainedModel","ExportWSDef","CreateILearnerBlob","CreateOrUpdateWS","DeleteWS")][string]$action="Default"
+	[ValidateSet( "Default","ExportTMFromExp","ExportWSDef","CreateILearnerBlob","CreateOrUpdateWS","DeleteWS","UpdateWSLocalILearner","UpdateWSRemoteILearner")][string]$action="Default"
 
 )
 
@@ -38,17 +38,14 @@ $config_env = $config_env_yaml.local
 $parameters += $config_env
 
 
-#$parameters += @{"env" = $env}
-
-
 $mlcommands_yaml = Get-Content -Path  $ProjectRoot\.\Build\ml\mlcommands.yml -Raw | ConvertFrom-Yaml 
 $mlprops = $mlcommands_yaml.$action
 $parameters += $mlprops
 
-$config_user = $mlcommands_yaml.AML_Studio_Credentials
-$parameters += $config_user		
+#$config_user = $mlcommands_yaml.AML_Studio_Credentials
+#$parameters += $config_user		
 
-$parameters
+#$parameters
 
 
 
