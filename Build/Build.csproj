@@ -48,7 +48,7 @@
     </None>
     <None Include="apitypes\apitypes.yml" />
     <None Include="config\config_common.yml" />
-    <None Include="ml\mlcommands.yml" />
+    <None Include="ml\mlcommands_template.yml" />
     <None Include="psake.ps1" />
   </ItemGroup>
   <ItemGroup>
