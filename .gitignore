@@ -8,6 +8,7 @@
 *.sln.docstates
 config_local.yml
 serviceprincipal.json
+mlcommands.yml
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
